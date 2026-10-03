@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitch Doctor — Sharpen Your Pitch</title>
+  <meta name="description" content="Pitch Doctor is an AI-powered pitch diagnosis platform. Sharpen your elevator pitch, investor deck script, and presentations with clarity and precision.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans for clean modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+
+    <!-- =========================================================
+         LEFT SIDEBAR (Collapses to top navigation bar on mobile)
+         ========================================================= -->
+    <aside class="sidebar" id="sidebar" aria-label="Main Navigation">
+      <!-- Pitch Doctor Brand Logo & Title -->
+      <div class="sidebar-brand">
+        <div class="brand-icon" aria-hidden="true">
+          <!-- Geometric spark / compass / pulse icon matching orange theme -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Pitch Doctor</span>
+          <span class="brand-badge">Diagnostic AI</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#dashboard" class="nav-link" id="nav-dashboard">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="9" rx="2"/>
+                <rect x="14" y="3" width="7" height="5" rx="2"/>
+                <rect x="14" y="12" width="7" height="9" rx="2"/>
+                <rect x="3" y="16" width="7" height="5" rx="2"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <!-- Active link -->
+            <a href="#new-pitch" class="nav-link active" id="nav-new-pitch" aria-current="page">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+              <span>New Pitch</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#history" class="nav-link" id="nav-history">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>History</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#settings" class="nav-link" id="nav-settings">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer / Pro Tip Card -->
+      <div class="sidebar-tip-card">
+        <div class="tip-badge">Pro Tip</div>
+        <p class="tip-text">Investors judge pitch clarity within <strong>45 seconds</strong>. Start with the customer pain point.</p>
+      </div>
+    </aside>
+
+    <!-- =========================================================
+         MAIN DASHBOARD WORKSPACE
+         ========================================================= -->
+    <main class="main-content">
+
+      <!-- Top Utility Bar (Search, Status, User Profile) -->
+      <header class="topbar">
+        <div class="topbar-search">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" placeholder="Search pitch frameworks, past drafts, rubrics..." aria-label="Search" class="search-input">
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" class="icon-btn" aria-label="Notifications" title="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-dot"></span>
+          </button>
+
+          <div class="user-profile-badge">
+            <div class="avatar-circle">PD</div>
+            <div class="user-info">
+              <span class="user-greeting">Good Evening,</span>
+              <span class="user-name">Founder</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <div class="content-wrapper">
+
+        <!-- Hero Card: Sharpen Your Pitch -->
+        <section class="hero-banner card" aria-labelledby="hero-heading">
+          <div class="hero-content">
+            <span class="hero-eyebrow">DISCOVER · DIAGNOSE · REFINE · DELIVER</span>
+            <h1 id="hero-heading" class="hero-title">
+              Sharpen Your <span class="accent-highlight">Pitch.</span>
+            </h1>
+            <p class="hero-description">
+              Transform your startup narrative, investor deck script, or sales presentation into a high-impact story. Get instant diagnostics on narrative clarity, pacing, and audience persuasion.
+            </p>
+
+            <!-- Quick Diagnostic Pillars Strip -->
+            <div class="hero-metrics">
+              <div class="metric-pill">
+                <span class="pill-dot"></span>
+                <span>Narrative Flow</span>
+              </div>
+              <div class="metric-pill">
+                <span class="pill-dot"></span>
+                <span>Tone & Hook Strength</span>
+              </div>
+              <div class="metric-pill">
+                <span class="pill-dot"></span>
+                <span>Pacing & Brevity</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Artistic geometric illustration inspired by the visual theme -->
+          <div class="hero-graphic" aria-hidden="true">
+            <div class="graphic-sun"></div>
+            <div class="graphic-staircase">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="graphic-overlay"></div>
+          </div>
+        </section>
+
+        <!-- "How It Works" Flow: Input → Analyze → Diagnose → Improve -->
+        <section class="how-it-works-card card" aria-label="How Pitch Doctor Works">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Diagnostic Pathway</h2>
+              <p class="section-subtitle">How Pitch Doctor refines your delivery in four simple steps</p>
+            </div>
+            <span class="flow-badge">4-Stage Pipeline</span>
+          </div>
+
+          <div class="flow-track">
+            <!-- Step 1: Input -->
+            <div class="flow-step">
+              <div class="step-badge active-step">
+                <span class="step-num">01</span>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Input</h3>
+                <p class="step-desc">Draft script, target audience & duration</p>
+              </div>
+            </div>
+
+            <div class="flow-divider" aria-hidden="true"></div>
+
+            <!-- Step 2: Analyze -->
+            <div class="flow-step">
+              <div class="step-badge">
+                <span class="step-num">02</span>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Analyze</h3>
+                <p class="step-desc">Linguistic flow, clarity & cadence audit</p>
+              </div>
+            </div>
+
+            <div class="flow-divider" aria-hidden="true"></div>
+
+            <!-- Step 3: Diagnose -->
+            <div class="flow-step">
+              <div class="step-badge">
+                <span class="step-num">03</span>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Diagnose</h3>
+                <p class="step-desc">Pinpoint weak hooks & jargon traps</p>
+              </div>
+            </div>
+
+            <div class="flow-divider" aria-hidden="true"></div>
+
+            <!-- Step 4: Improve -->
+            <div class="flow-step">
+              <div class="step-badge">
+                <span class="step-num">04</span>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Improve</h3>
+                <p class="step-desc">Actionable rewrites & timing punchlines</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Two-Column Layout: Main Pitch Input Form & Context Panel -->
+        <div class="workspace-grid">
+
+          <!-- Left / Main Card: Pitch Input Form -->
+          <div class="card form-card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Pitch Workspace</h2>
+                <p class="card-subtitle">Paste your pitch text and configure your target parameters.</p>
+              </div>
+              <button type="button" id="loadSampleBtn" class="btn-text" title="Insert a sample pitch script">
+                Load Sample Pitch
+              </button>
+            </div>
+
+            <form id="pitchForm" novalidate>
+              
+              <!-- Large Textarea for Pitch Script -->
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="pitchText" class="form-label">
+                    Pitch Script / Speech Text <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <div class="counter-group">
+                    <span id="wordCountBadge" class="counter-badge">0 words</span>
+                    <span id="estimatedTimeBadge" class="counter-badge secondary">~0 sec speaking time</span>
+                  </div>
+                </div>
+
+                <textarea
+                  id="pitchText"
+                  name="pitchText"
+                  rows="10"
+                  class="form-textarea"
+                  placeholder="Paste or write your pitch script here...&#10;&#10;e.g., 'Over 50 million independent retailers lose 15% of annual revenue to supply chain delays. We built FlowSync: an autonomous inventory predictor that syncs supplier lead times in real time...'"
+                  required
+                  aria-describedby="pitchError"
+                ></textarea>
+
+                <!-- Validation error feedback -->
+                <div id="pitchError" class="error-feedback" role="alert" aria-live="polite"></div>
+              </div>
+
+              <!-- Two-Column Form Row: Target Audience & Pitch Duration -->
+              <div class="form-row">
+                
+                <!-- Target Audience Field -->
+                <div class="form-group col-half">
+                  <label for="targetAudience" class="form-label">Target Audience</label>
+                  <div class="input-icon-wrapper">
+                    <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                      <circle cx="9" cy="7" r="4"/>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <input
+                      type="text"
+                      id="targetAudience"
+                      name="targetAudience"
+                      class="form-input"
+                      placeholder="e.g., Angel Investors, Enterprise B2B Buyers"
+                      list="audienceSuggestions"
+                    >
+                  </div>
+                  <!-- Datalist for convenient quick autocomplete -->
+                  <datalist id="audienceSuggestions">
+                    <option value="Seed & Series A Venture Capitalists">
+                    <option value="Angel Investors & Syndicates">
+                    <option value="Enterprise B2B Decision Makers">
+                    <option value="Demo Day & Startup Competition Judges">
+                    <option value="Direct-to-Consumer / Mass Market">
+                    <option value="Industry Conference Keynote">
+                  </datalist>
+                </div>
+
+                <!-- Pitch Duration Field -->
+                <div class="form-group col-half">
+                  <label for="pitchDuration" class="form-label">Pitch Duration</label>
+                  <div class="input-icon-wrapper">
+                    <svg class="field-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <select id="pitchDuration" name="pitchDuration" class="form-select">
+                      <option value="30s">30 Seconds (Elevator Pitch)</option>
+                      <option value="60s">1 Minute (Lightning Pitch)</option>
+                      <option value="2m" selected>2 Minutes (Executive Summary)</option>
+                      <option value="3m">3 Minutes (Demo Day Standard)</option>
+                      <option value="5m">5 Minutes (Investor Deck Intro)</option>
+                      <option value="10m">10 Minutes (Full Presentation)</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Action Area: Submit Button & Hidden Loading State -->
+              <div class="form-actions">
+                <button type="submit" id="analyzeBtn" class="btn btn-primary">
+                  <span class="btn-text-content">Analyze Pitch</span>
+                  <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </button>
+
+                <!-- Hidden Loading State reading "Analyzing your pitch..." -->
+                <div id="loadingState" class="loading-state" role="status" aria-live="polite" aria-hidden="true">
+                  <div class="loading-spinner"></div>
+                  <div class="loading-text-group">
+                    <span class="loading-primary">Analyzing your pitch...</span>
+                    <span class="loading-secondary">Evaluating clarity, structural hooks, and delivery cadence.</span>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Right / Companion Card: Pitch Doctor Rubric & Guidelines -->
+          <aside class="card side-panel" aria-label="Pitch Focus Guidelines">
+            <div class="side-panel-header">
+              <h3 class="side-title">Pitch Essentials</h3>
+              <span class="side-tag">4 Criteria</span>
+            </div>
+
+            <ul class="checklist-items">
+              <li class="checklist-item">
+                <div class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">The 15-Second Hook</h4>
+                  <p class="check-desc">State the acute customer problem or counter-intuitive insight right away.</p>
+                </div>
+              </li>
+
+              <li class="checklist-item">
+                <div class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Defensible Solution</h4>
+                  <p class="check-desc">Clarify what makes your approach uniquely defensible and 10x better.</p>
+                </div>
+              </li>
+
+              <li class="checklist-item">
+                <div class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Quantified Traction</h4>
+                  <p class="check-desc">Back up momentum with metrics, pilot customers, or organic growth.</p>
+                </div>
+              </li>
+
+              <li class="checklist-item">
+                <div class="check-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="check-title">Crystal-Clear Ask</h4>
+                  <p class="check-desc">State exactly what capital, partner intros, or customer pilots you need.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="side-callout">
+              <div class="callout-icon" aria-hidden="true">💡</div>
+              <p class="callout-text">
+                Target conversation speed: <strong>130 to 150 words per minute</strong> for optimal investor comprehension.
+              </p>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
